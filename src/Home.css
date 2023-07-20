@@ -103,6 +103,13 @@ head {
   max-width: 800px;
 }
 
+@media only screen and (max-width: 800px) {
+  .container {
+    margin: 0 10px;
+    max-width: 800px;
+  }
+}
+
 .heading {
   font-weight: 600;
   font-size: 1.5rem;

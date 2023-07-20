@@ -6,7 +6,9 @@ function Activity({name, ic, distance, goal, color}) {
         <div className="activity">
             <div className="up">
                 <div className="title">
-                    <FontAwesomeIcon icon={`fa-solid ${ic}`} size="xl" />
+                    <span className="icon">
+                        <FontAwesomeIcon icon={`fa-solid ${ic}`} size="xl" />
+                    </span>
                     <span className="medium">{name}</span>
                 </div>
                 <span className="light">{distance.toFixed(3)} km/{goal} km</span>
