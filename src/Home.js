@@ -1,9 +1,5 @@
-import logo from './logo.svg';
 import './Home.css';
 import {useEffect, useState} from "react";
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 import Activity from "./components/Activity";
 
 function Home() {
@@ -30,7 +26,7 @@ function Home() {
   return (
     <div className="App">
         <div className="container">
-            <h1 className="heading">Wakacyjne statystyki sportowe</h1>
+            <h1 className="heading">Aktywność sportowa</h1>
             <div className="activities">
                 {getActivity("Ride") && <Activity distance={getActivity("Ride").distance} goal={getActivity("Ride").goal} ic="fa-bicycle" name="Jazda na rowerze" color="#639fff" />}
                 {getActivity("Walk") && <Activity distance={getActivity("Walk").distance} goal={getActivity("Walk").goal} ic="fa-person-walking" name="Spacerowanie" color="#ff9b00" />}

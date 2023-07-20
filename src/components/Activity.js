@@ -1,16 +1,5 @@
 import './Activity.css';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
-
-// not sure about exact import
-import { faBicycle, faPersonWalking } from '@fortawesome/free-solid-svg-icons';
-
-// you'd put all valid values that can come from the backend here
-const myIcons = {
-    bicycle: faBicycle.icon,
-    walk: faPersonWalking.icon
-}
 
 function Activity({name, ic, distance, goal, color}) {
     return (
