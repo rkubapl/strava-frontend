@@ -31,6 +31,7 @@ function Home() {
         var now = new Date().getTime();
 
         // Find the distance between now and the count down date
+        var periodOfTime = countDownDate - new Date(1687557600*1000);
         var distance = countDownDate - now;
 
         // Time calculations for days, hours, minutes and seconds
@@ -39,7 +40,7 @@ function Home() {
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        setCountdown({loaded: true, finished: false, days, hours, minutes, seconds, percent: ((days/72)*100).toFixed(2)});
+        setCountdown({loaded: true, finished: false, days, hours, minutes, seconds, percent: ((distance/periodOfTime)*100).toFixed(2)});
 
         if (distance < 0) {
             clearInterval(x);
