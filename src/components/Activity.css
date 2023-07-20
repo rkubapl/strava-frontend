@@ -1,0 +1,61 @@
+.animated-progress {
+    width: auto;
+    height: 30px;
+    border-radius: 16px;
+    /*margin: 20px 10px;*/
+    border: 1px solid #000;
+    overflow: hidden;
+    position: relative;
+}
+
+.animated-progress span {
+    height: 100%;
+    display: block;
+    width: 0;
+    color: rgb(255, 251, 251);
+    line-height: 30px;
+    position: absolute;
+    text-align: end;
+    padding-right: 5px;
+}
+
+.progress-blue span {
+    background-color: blue;
+}
+.progress-green span {
+    background-color: #639fff;
+}
+.progress-purple span {
+    background-color: indigo;
+}
+.progress-red span {
+    background-color: red;
+}
+
+.up {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.medium {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.light {
+    font-weight: 300;
+    font-size: .9rem;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.activity {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
