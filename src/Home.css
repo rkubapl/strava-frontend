@@ -113,7 +113,15 @@ head {
 .heading {
   font-weight: 600;
   font-size: 1.5rem;
+  margin-bottom: 10px;
 }
+
+.subheading {
+  margin-top: 0;
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
 
 .update {
   font-size: .9rem;
