@@ -8,7 +8,7 @@
     position: relative;
 }
 
-.animated-progress span {
+.animated-progress .progress {
     height: 100%;
     display: block;
     width: 0;
@@ -18,18 +18,31 @@
     padding-right: 5px;
 }
 
-.progress-blue span {
-    background-color: blue;
+.progress-span {
+    color: #000;
+    position: absolute;
+    z-index: 2;
+    display: block;
+    font-size: .8rem;
+    margin-left: 10px;
+    /*margin-top: auto;*/
+    /*margin-bottom: auto;*/
+    /*height: 100%;*/
+    line-height: 30px;
 }
-.progress-green span {
-    background-color: #639fff;
-}
-.progress-purple span {
-    background-color: indigo;
-}
-.progress-red span {
-    background-color: red;
-}
+
+/*.progress-blue .progress {*/
+/*    background-color: blue;*/
+/*}*/
+/*.progress-green span {*/
+/*    background-color: #639fff;*/
+/*}*/
+/*.progress-purple span {*/
+/*    background-color: indigo;*/
+/*}*/
+/*.progress-red span {*/
+/*    background-color: red;*/
+/*}*/
 
 .up {
     display: flex;
