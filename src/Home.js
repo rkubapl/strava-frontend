@@ -4,15 +4,34 @@ import Activity from "./components/Activity";
 import LastActivity from "./components/LastActivity";
 
 function Home() {
+    // const [password, setPassword] = useState();
+
+    function promptUserPassword() {
+        const passwd = prompt("Proszę podać hasło");
+        loadData(passwd);
+    }
+
     const [data, setData] = useState({stats: []});
     const [countdown, setCountdown] = useState({loaded: false});
 
     useEffect(() => {
-        fetch(process.env.REACT_APP_API_URL + "/stats")
-            .then(resp => resp.json())
-            .then(data => setData(data));
+        if(localStorage.getItem("password")) {
+            loadData(localStorage.getItem("password"));
+        } else promptUserPassword()
     }, []);
 
+    function loadData(password) {
+        fetch(process.env.REACT_APP_API_URL + "/stats?password=" + password)
+            .then(resp => resp.json())
+            .then(data => {
+                if(data.password) {
+                    setData(data)
+                    localStorage.setItem("password", password)
+                } else {
+                    setTimeout(promptUserPassword(), 2000)
+                }
+            });
+    }
     function getActivity(name) {
         return data.stats.find(activity => activity.name === name)
     }
@@ -83,7 +102,7 @@ function Home() {
             <div className="lastActivities">
                 {data.lastActivities && data.lastActivities.map(activity => <LastActivity ic={icon[activity.type]} elapsed_time={activity.elapsed_time} name={activity.name} date={new Date(activity.date)} distance={activity.distance}/>)}
             </div>
-            <span className="update">Ostatnia aktualizacja: {data.updateTime ? toDate(data.updateTime) : "Nie załadowano danych"}<br/>Status autoryzacji: {data.auth ? "OK" : "Potrzebna autoryzacja"}</span>
+            <span className="update">Ostatnia aktualizacja: {data.updateTime ? toDate(data.updateTime) : "Nie załadowano danych"}<br/>Status autoryzacji: {data.auth ? "OK" : "Potrzebna autoryzacja"}<br /><a href="#" onClick={() => localStorage.removeItem("password")}>Usuń hasło</a></span>
         </div>
     </div>
   );
