@@ -1,9 +1,10 @@
 import './Home.css';
 import {useEffect, useState} from "react";
 import Activity from "./components/Activity";
+import LastActivity from "./components/LastActivity";
 
 function Home() {
-    const [data, setData] = useState({activities: []});
+    const [data, setData] = useState({stats: []});
     const [countdown, setCountdown] = useState({loaded: false});
 
     useEffect(() => {
@@ -13,7 +14,7 @@ function Home() {
     }, []);
 
     function getActivity(name) {
-        return data.activities.find(activity => activity.name === name)
+        return data.stats.find(activity => activity.name === name)
     }
 
     const formatNumber = n => ("0" + n).slice(-2);
@@ -64,6 +65,11 @@ function Home() {
         }
     }
 
+    const icon = {
+        "Walk": "fa-person-walking",
+        "Ride": "fa-bicycle"
+    }
+
   return (
     <div className="App">
         <div className="container">
@@ -72,6 +78,10 @@ function Home() {
             <div className="activities">
                 {getActivity("Ride") && <Activity data={getActivity("Ride")} ic="fa-bicycle" name="Jazda na rowerze" color="#639fff" avg={countAvg(getActivity("Ride"))} />}
                 {getActivity("Walk") && <Activity data={getActivity("Walk")} ic="fa-person-walking" name="Spacerowanie" color="#ff9b00" avg={countAvg(getActivity("Walk"))} />}
+            </div>
+            <h1 className="subheading">Ostanie aktywności sportowe</h1>
+            <div className="lastActivities">
+                {data.lastActivities && data.lastActivities.map(activity => <LastActivity ic={icon[activity.type]} elapsed_time={activity.elapsed_time} name={activity.name} date={new Date(activity.date)} distance={activity.distance}/>)}
             </div>
             <span className="update">Ostatnia aktualizacja: {data.updateTime ? toDate(data.updateTime) : "Nie załadowano danych"}<br/>Status autoryzacji: {data.auth ? "OK" : "Potrzebna autoryzacja"}</span>
         </div>

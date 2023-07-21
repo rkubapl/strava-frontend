@@ -1,0 +1,25 @@
+.lastactivity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.ic {
+    width: 60px;
+}
+
+.info {
+    display: flex;
+    gap: 2px;
+    flex-direction: column;
+}
+.infoTitle {
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.infoDesc {
+    font-size: .8rem;
+    font-weight: 300;
+}

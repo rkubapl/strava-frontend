@@ -39,13 +39,6 @@ head {
   max-width: 800px;
 }
 
-@media only screen and (max-width: 800px) {
-  .container {
-    margin: 0 10px;
-    max-width: 800px;
-  }
-}
-
 .heading {
   font-weight: 600;
   font-size: 1.5rem;
@@ -62,4 +55,32 @@ head {
 .update {
   font-size: .9rem;
   font-weight: 300;
+}
+
+.lastActivities {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 60px;
+  grid-column-gap: 50px;
+  /*grid-row-gap: 20px;*/
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    margin: 0 10px;
+    max-width: 800px;
+  }
+
+  .lastActivities {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .lastActivities {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

@@ -3,16 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 function Activity({name, ic, data, color, avg}) {
     function percent() { return ((data.distance/data.goal)*100) };
 
-    function toDecimalStr(value) {
-        let str=value.toFixed(1).replace(/([0]+)$/,"");
-        try {
-            if (str.endsWith(".")) str+='0';
-        } catch (e) {
-            str+='0';
-        }
-        return str;
-    }
-
     return (
         <div className="activity">
             <div className="up">
