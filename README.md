@@ -1,70 +1,21 @@
-# Getting Started with Create React Home
+# Strava Goal Setter Frontend
 
-This project was bootstrapped with [Create React Home](https://github.com/facebook/create-react-app).
+Strava Goal Setter Frontend was created by me to track my summer biking and walking goals. This application works in conjunction with the [API](https://github.com/rkubapl/strava-api) to fetch and display your activity data.
 
-## Available Scripts
+## Deployment Instructions
 
-In the project directory, you can run:
+To deploy the Strava Goal Setter Frontend, please ensure you have the following prerequisites set up:
+- Set up the [API](https://github.com/rkubapl/strava-api/) to handle backend functionality.
 
-### `npm start`
+To deploy the web app, follow the instructions provided by [this guide]([https://facebook.github.io/create-react-app/docs/deployment). This guide will walk you through the process of deploying a production-ready version of the app.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+For my own deployment, I prefer using [Cloudflare Pages](https://pages.cloudflare.com/). You can find a [detailed guide on how to deploy the app using Cloudflare Pages here](https://developers.cloudflare.com/pages/get-started/guide/).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Don't forget to set up the environment variable `REACT_APP_API_URL` with your API URL:
+```md
+REACT_APP_API_URL=https://strava-api.rkubapl.workers.dev
+```
 
-### `npm test`
+## License
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React Home documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web Home
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The Strava Goal Setter Frontend is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). Feel free to modify and use it according to your needs.
